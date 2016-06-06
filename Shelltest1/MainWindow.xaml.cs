@@ -31,7 +31,6 @@ namespace Shelltest1
             using (SshClient linux = new SshClient("192.168.0.2", "mdeering", "Lolpops123"))
             {
                 linux.Connect();
-                linux.Disconnect();
                 if (!linux.IsConnected)
                 {
                     // Display error
@@ -41,6 +40,15 @@ namespace Shelltest1
                 {
                     MessageBox.Show("Success!");
                 }
+            }
+        }
+
+        private void btnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            using (SshClient linux = new SshClient("192.168.0.2", "mdeering", "Lolpops123"))
+            {
+                linux.RunCommand("cd /home/mdeering");
+                linux.RunCommand("./update.sh");
             }
         }
     }
