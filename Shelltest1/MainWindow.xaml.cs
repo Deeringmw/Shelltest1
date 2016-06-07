@@ -28,7 +28,7 @@ namespace Shelltest1
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            using (SshClient linux = new SshClient("192.168.0.2", "mdeering", "Lolpops123"))
+            using (SshClient linux = new SshClient("72.185.188.0", "mdeering", "Lolpops123"))
             {
                 linux.Connect();
                 if (!linux.IsConnected)
@@ -39,13 +39,15 @@ namespace Shelltest1
                 else
                 {
                     MessageBox.Show("Success!");
+                    linux.RunCommand("cd /home/mdeering");
+                    linux.RunCommand("./update.sh");
                 }
             }
         }
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
-            using (SshClient linux = new SshClient("192.168.0.2", "mdeering", "Lolpops123"))
+            using (SshClient linux = new SshClient("72.185.188.0", "mdeering", "Lolpops123"))
             {
                 linux.RunCommand("cd /home/mdeering");
                 linux.RunCommand("./update.sh");
