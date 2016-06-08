@@ -70,6 +70,7 @@ namespace Shelltest1
         public List<ServerSettings> ServerSettingses { get; set; }
 
 
+        // this should probably use JSON instead of jt format
         private void LoadServers()
         {
             if (!File.Exists("settings.bbq")) File.Create("settings.bbq").Close();

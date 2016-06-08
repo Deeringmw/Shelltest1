@@ -26,6 +26,7 @@ namespace Shelltest1
             InitializeComponent();
         }
 
+        // this should probably use JSON instead of jt format
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             var file = new FileInfo("settings.bbq");
